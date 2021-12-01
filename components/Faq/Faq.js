@@ -1,42 +1,42 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Container from '@material-ui/core/Container';
-import Hidden from '@material-ui/core/Hidden';
-import Grid from '@material-ui/core/Grid';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Typography from '@material-ui/core/Typography';
-import { useText } from '~/theme/common';
-import { withTranslation } from '~/i18n';
-import illustration from '~/public/images/movie/faq.png';
-import Title from '../Title';
-import useStyles from './faq-style';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
+import clsx from "clsx";
+import Container from "@material-ui/core/Container";
+import Hidden from "@material-ui/core/Hidden";
+import Grid from "@material-ui/core/Grid";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Typography from "@material-ui/core/Typography";
+import { useText } from "~/theme/common";
+import { withTranslation } from "~/i18n";
+import illustration from "~/public/images/movie/faq.png";
+import Title from "../Title";
+import useStyles from "./faq-style";
 
 const faqData = [
   {
-    q: 'Pellentesque ac bibendum tortor?',
-    a: 'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: "Abour Pallyed",
+    a: "Pallyed is a platform that provides personal contact and an engaging social interaction between fans and their favourite celebrities. ",
   },
   {
-    q: 'In mi nulla, fringilla vestibulum?',
-    a: 'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: "What are the services of Pallyed?",
+    a: "-Request personalized video/audio messages</br> - request one-on-one video chat ",
   },
   {
-    q: 'Quisque lacinia purus ut libero?',
-    a: 'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: "How can I request for such videos?",
+    a: "Answer ",
   },
   {
-    q: 'Quisque ut metus sit amet augue?',
-    a: 'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: "How long does it take the celebrity to respond?",
+    a: "Answer ",
   },
   {
-    q: 'Pellentesque ac bibendum tortor?',
-    a: 'Vivamus sit amet interdum elit. Proin lacinia erat ac velit tempus auctor. '
+    q: "How many request can I make with one payment?",
+    a: "Answer ",
   },
 ];
 
@@ -45,10 +45,10 @@ function Faq(props) {
   const text = useText();
   const [expanded, setExpanded] = useState(0);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const { t } = props;
-  const handleChange = panel => (event, newExpanded) => {
+  const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
   return (
@@ -56,9 +56,17 @@ function Faq(props) {
       <Container fixed>
         <Grid container spacing={6}>
           <Grid item md={6}>
-            <Title align={isMobile ? 'center' : 'left'} primary="Frequently" secondary="Answered Questions" />
-            <Typography className={clsx(classes.text, text.subtitle2)} align={isMobile ? 'center' : 'left'} component="p">
-              {t('common:movie-landing.faq_subtitle')}
+            <Title
+              align={isMobile ? "center" : "left"}
+              primary="Frequently"
+              secondary="Answered Questions"
+            />
+            <Typography
+              className={clsx(classes.text, text.subtitle2)}
+              align={isMobile ? "center" : "left"}
+              component="p"
+            >
+              {t("common:movie-landing.faq_subtitle")}
             </Typography>
             <Hidden smDown>
               <div className={classes.illustration}>
@@ -72,7 +80,7 @@ function Faq(props) {
                 <div className={classes.item} key={index.toString()}>
                   <Accordion
                     classes={{
-                      root: classes.paper
+                      root: classes.paper,
                     }}
                     expanded={expanded === index}
                     onChange={handleChange(index)}
@@ -83,7 +91,9 @@ function Faq(props) {
                         expanded: classes.expanded,
                       }}
                     >
-                      <Typography className={classes.heading}>{item.q}</Typography>
+                      <Typography className={classes.heading}>
+                        {item.q}
+                      </Typography>
                       <ExpandMoreIcon className={classes.icon} />
                     </AccordionSummary>
                     <AccordionDetails
@@ -91,9 +101,7 @@ function Faq(props) {
                         root: classes.detail,
                       }}
                     >
-                      <Typography>
-                        {item.a}
-                      </Typography>
+                      <Typography>{item.a}</Typography>
                     </AccordionDetails>
                   </Accordion>
                 </div>
@@ -107,7 +115,7 @@ function Faq(props) {
 }
 
 Faq.propTypes = {
-  t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired,
 };
 
-export default withTranslation(['movie-landing'])(Faq);
+export default withTranslation(["movie-landing"])(Faq);

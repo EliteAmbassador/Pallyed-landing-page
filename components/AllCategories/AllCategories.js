@@ -1,63 +1,63 @@
-import React, { useRef } from 'react';
-import Carousel from 'react-slick';
-import clsx from 'clsx';
-import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
-import BackIcon from '@material-ui/icons/ArrowBackSharp';
-import NextIcon from '@material-ui/icons/ArrowForwardSharp';
-import Title from '../Title';
-import SimpleThumbCard from '../Cards/SimpleThumb';
-import useStyles from './all-categories-style';
+import React, { useRef } from "react";
+import Carousel from "react-slick";
+import clsx from "clsx";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import BackIcon from "@material-ui/icons/ArrowBackSharp";
+import NextIcon from "@material-ui/icons/ArrowForwardSharp";
+import Title from "../Title";
+import SimpleThumbCard from "../Cards/SimpleThumb";
+import useStyles from "./all-categories-style";
 
 const dataProducts = [
   {
-    icon: 'ion-ios-heart',
-    title: 'Romantic'
+    icon: "ion-ios-heart",
+    title: "Romantic",
   },
   {
-    icon: 'ion-ios-planet',
-    title: 'sci-fi'
+    icon: "ion-ios-planet",
+    title: "sci-fi",
   },
   {
-    icon: 'ion-ios-happy',
-    title: 'commedy'
+    icon: "ion-ios-happy",
+    title: "commedy",
   },
   {
-    icon: 'ion-ios-star',
-    title: 'super heroes'
+    icon: "ion-ios-star",
+    title: "super heroes",
   },
   {
-    icon: 'ion-ios-flash',
-    title: 'actions'
+    icon: "ion-ios-flash",
+    title: "actions",
   },
   {
-    icon: 'ion-ios-videocam',
-    title: 'hollywood'
+    icon: "ion-ios-videocam",
+    title: "hollywood",
   },
   {
-    icon: 'ion-ios-heart',
-    title: 'Romantic'
+    icon: "ion-ios-heart",
+    title: "Romantic",
   },
   {
-    icon: 'ion-ios-planet',
-    title: 'sci-fi'
+    icon: "ion-ios-planet",
+    title: "sci-fi",
   },
   {
-    icon: 'ion-ios-happy',
-    title: 'commedy'
+    icon: "ion-ios-happy",
+    title: "commedy",
   },
   {
-    icon: 'ion-ios-star',
-    title: 'super heroes'
+    icon: "ion-ios-star",
+    title: "super heroes",
   },
   {
-    icon: 'ion-ios-flash',
-    title: 'actions'
+    icon: "ion-ios-flash",
+    title: "actions",
   },
   {
-    icon: 'ion-ios-videocam',
-    title: 'hollywood'
-  }
+    icon: "ion-ios-videocam",
+    title: "hollywood",
+  },
 ];
 
 const settings = {
@@ -68,20 +68,23 @@ const settings = {
   slidesToScroll: 3,
   autoplay: true,
   autoplaySpeed: 7000,
-  responsive: [{
-    breakpoint: 1024,
-    settings: {
-      slidesToShow: 4,
-      slidesToScroll: 3,
-      infinite: true
-    }
-  }, {
-    breakpoint: 600,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 2
-    }
-  }]
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 3,
+        infinite: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+  ],
 };
 
 export default function Feature() {
@@ -96,21 +99,24 @@ export default function Feature() {
   return (
     <div className={classes.root}>
       <Container className={classes.carouselContainer}>
-        <Title align="center" primary="All" secondary="Categories" />
+        <Title align="center" primary="Autographed" secondary="Collections" />
         <div className={classes.carouselWrap}>
-          <Button className={clsx(classes.nav, classes.prev)} onClick={prevSlide}>
+          <Button
+            className={clsx(classes.nav, classes.prev)}
+            onClick={prevSlide}
+          >
             <BackIcon />
           </Button>
-          <Button className={clsx(classes.nav, classes.next)} onClick={nextSlide}>
+          <Button
+            className={clsx(classes.nav, classes.next)}
+            onClick={nextSlide}
+          >
             <NextIcon />
           </Button>
           <Carousel ref={slider} {...settings}>
             {dataProducts.map((item, index) => (
               <div key={index.toString()} className={classes.item}>
-                <SimpleThumbCard
-                  title={item.title}
-                  icon={item.icon}
-                />
+                <SimpleThumbCard title={item.title} icon={item.icon} />
               </div>
             ))}
           </Carousel>

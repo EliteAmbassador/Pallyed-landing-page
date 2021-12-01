@@ -1,9 +1,3 @@
-const menu = [
-  'promotions',
-  'featured',
-  'top',
-  'all',
-  'pricing'
-];
+const menu = ["promotions", "featured", "top", "all"];
 
 export default menu;

@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Carousel from 'react-slick';
-import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Hidden from '@material-ui/core/Hidden';
-import { withTranslation } from '~/i18n';
-import imgAPI from '~/public/images/imgAPI';
-import useStyles from './trending-style';
+import React from "react";
+import PropTypes from "prop-types";
+import Carousel from "react-slick";
+import Typography from "@material-ui/core/Typography";
+import ButtonBase from "@material-ui/core/ButtonBase";
+import Hidden from "@material-ui/core/Hidden";
+import { withTranslation } from "~/i18n";
+import imgAPI from "~/public/images/imgAPI";
+import useStyles from "./trending-style";
 
 const settings = {
   dots: false,
@@ -15,7 +15,7 @@ const settings = {
   arrows: false,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 7000
+  autoplaySpeed: 7000,
 };
 
 function Trending(props) {
@@ -28,7 +28,7 @@ function Trending(props) {
           <img src={imgAPI.movie[6]} alt="trending" />
           <ButtonBase className={classes.overlay}>
             <Typography variant="h5">
-              {t('common:movie-landing.trending_rent')}
+              {t("common:movie-landing.trending_rent")}
             </Typography>
           </ButtonBase>
         </div>
@@ -37,8 +37,8 @@ function Trending(props) {
           <ButtonBase className={classes.overlay}>
             <Typography variant="h3">
               <i className="ion-ios-cafe" />
-              FREE
-              <span>Movies</span>
+              FAN
+              <span>Connect</span>
             </Typography>
           </ButtonBase>
         </div>
@@ -46,7 +46,7 @@ function Trending(props) {
           <img src={imgAPI.movie[8]} alt="trending" />
           <ButtonBase className={classes.overlay}>
             <Typography variant="h5">
-              {t('common:movie-landing.trending_episodes')}
+              {t("common:movie-landing.trending_episodes")}
             </Typography>
           </ButtonBase>
         </div>
@@ -58,7 +58,7 @@ function Trending(props) {
               <img src={imgAPI.movie[6]} alt="trending" />
               <ButtonBase className={classes.overlay}>
                 <Typography variant="h5">
-                  {t('common:movie-landing.trending_rent')}
+                  {t("common:movie-landing.trending_rent")}
                 </Typography>
               </ButtonBase>
             </div>
@@ -69,8 +69,8 @@ function Trending(props) {
               <ButtonBase className={classes.overlay}>
                 <Typography variant="h3">
                   <i className="ion-ios-cafe" />
-                  FREE
-                  <span>Movies</span>
+                  Celebrity
+                  <span>Shoutouts</span>
                 </Typography>
               </ButtonBase>
             </div>
@@ -80,7 +80,7 @@ function Trending(props) {
               <img src={imgAPI.movie[8]} alt="trending" />
               <ButtonBase className={classes.overlay}>
                 <Typography variant="h5">
-                  {t('common:movie-landing.trending_episodes')}
+                  {t("common:movie-landing.trending_episodes")}
                 </Typography>
               </ButtonBase>
             </div>
@@ -92,7 +92,7 @@ function Trending(props) {
 }
 
 Trending.propTypes = {
-  t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired,
 };
 
-export default withTranslation(['movie-landing'])(Trending);
+export default withTranslation(["movie-landing"])(Trending);
