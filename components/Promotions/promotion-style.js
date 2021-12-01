@@ -16,7 +16,7 @@ const arrowNav = {
 const height = 450;
 const heightMobile = 600;
 
-const pallyedStyles = makeStyles(theme => ({
+const promotionStyles = makeStyles(theme => ({
   root: {
     position: 'relative',
     marginTop: -130,
@@ -232,4 +232,4 @@ const pallyedStyles = makeStyles(theme => ({
   },
 }));
 
-export default pallyedStyles;
+export default promotionStyles;

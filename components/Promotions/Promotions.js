@@ -1,45 +1,53 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
-import Grid from "@material-ui/core/Grid";
-import clsx from "clsx";
-import Typography from "@material-ui/core/Typography";
-import Icon from "@material-ui/core/Icon";
-import Slider from "react-animated-slider";
-import { withTranslation } from "~/i18n";
-import { useText } from "~/theme/common";
-import useStyles from "./pallyed-style";
-import imgAPI from "~/public/images/imgAPI";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
+import Grid from '@material-ui/core/Grid';
+import clsx from 'clsx';
+import Typography from '@material-ui/core/Typography';
+import Icon from '@material-ui/core/Icon';
+import Slider from 'react-animated-slider';
+import { withTranslation } from '~/i18n';
+import { useText } from '~/theme/common';
+import useStyles from './promotion-style';
+import imgAPI from '~/public/images/imgAPI';
 
 const sliderData = [
   {
     image: imgAPI.movie[1],
-    subtitle: "",
-    title: "Pal up with your favourite star",
-    rating: 7,
-    duration: "",
-    desc: "",
+    subtitle: 'Vivamus sit amet',
+    title: 'The Lorem Ipsum Dolor Sit',
+    rating: 5,
+    duration: '2h 15m',
+    desc: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci.'
   },
   {
     image: imgAPI.movie[2],
-    subtitle: "Vivamus sit amet",
-    title: "The Lorem Ipsum Dolor Sit",
+    subtitle: 'Vivamus sit amet',
+    title: 'The Lorem Ipsum Dolor Sit',
     rating: 5,
-    duration: "2h 15m",
-    desc: "Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci.",
+    duration: '2h 15m',
+    desc: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci.'
   },
   {
     image: imgAPI.movie[3],
-    subtitle: "Vivamus sit amet",
-    title: "The Lorem Ipsum Dolor Sit",
+    subtitle: 'Vivamus sit amet',
+    title: 'The Lorem Ipsum Dolor Sit',
     rating: 5,
-    duration: "2h 15m",
-    desc: "Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci.",
+    duration: '2h 15m',
+    desc: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci.'
   },
+  {
+    image: imgAPI.movie[5],
+    subtitle: 'Vivamus sit amet',
+    title: 'The Lorem Ipsum Dolor Sit',
+    rating: 5,
+    duration: '2h 15m',
+    desc: 'Vestibulum faucibus eget erat eget pretium. Donec commodo convallis eget suscipit orci.'
+  }
 ];
 
-function Pallyed(props) {
+function Promotion(props) {
   const classes = useStyles();
   const text = useText();
   const { t } = props;
@@ -49,16 +57,12 @@ function Pallyed(props) {
         <Slider
           autoplay={7500}
           className="slider-wrapper"
-          previousButton={
-            <i
-              className={clsx(classes.arrowIcon, "ion-ios-arrow-round-forward")}
-            />
-          }
-          nextButton={
-            <i
-              className={clsx(classes.arrowIcon, "ion-ios-arrow-round-forward")}
-            />
-          }
+          previousButton={(
+            <i className={clsx(classes.arrowIcon, 'ion-ios-arrow-round-forward')} />
+          )}
+          nextButton={(
+            <i className={clsx(classes.arrowIcon, 'ion-ios-arrow-round-forward')} />
+          )}
         >
           {sliderData.map((item, index) => (
             <div className={classes.item} key={index.toString()}>
@@ -78,12 +82,7 @@ function Pallyed(props) {
                       <p className={classes.property}>
                         <span className={classes.star}>
                           {[...Array(item.rating)].map((e, indexStar) => (
-                            <Icon
-                              className={classes.starIcon}
-                              key={indexStar.toString()}
-                            >
-                              star
-                            </Icon>
+                            <Icon className={classes.starIcon} key={indexStar.toString()}>star</Icon>
                           ))}
                         </span>
                         5.0
@@ -97,14 +96,10 @@ function Pallyed(props) {
                       </article>
                       <section className={classes.btnArea}>
                         <Button className={classes.btnText} color="secondary">
-                          {t("common:movie-landing.promo_btn1")}
+                          {t('common:movie-landing.promo_btn1')}
                         </Button>
-                        <Button
-                          variant="contained"
-                          size="large"
-                          color="primary"
-                        >
-                          {t("common:movie-landing.promo_btn2")}
+                        <Button variant="contained" size="large" color="primary">
+                          {t('common:movie-landing.promo_btn2')}
                         </Button>
                       </section>
                     </div>
@@ -128,8 +123,8 @@ function Pallyed(props) {
   );
 }
 
-Pallyed.propTypes = {
+Promotion.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation(["movie-landing"])(Pallyed);
+export default withTranslation(['movie-landing'])(Promotion);

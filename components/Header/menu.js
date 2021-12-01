@@ -1,9 +1,9 @@
 const menu = [
-  "pallyeds",
-  "featured",
-  "top",
-  "all",
-  //'pricing'
+  'promotions',
+  'featured',
+  'top',
+  'all',
+  'pricing'
 ];
 
 export default menu;
