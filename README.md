@@ -1,4 +1,4 @@
-# `movie-theme`
+# `pallyed`
 
 > TODO: description
 

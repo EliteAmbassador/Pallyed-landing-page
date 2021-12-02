@@ -12,35 +12,35 @@ import useStyles from "./all-categories-style";
 const dataProducts = [
   {
     icon: "ion-ios-heart",
-    title: "Romantic",
+    title: "Celebrities",
   },
   {
     icon: "ion-ios-planet",
-    title: "sci-fi",
+    title: "Business",
   },
   {
     icon: "ion-ios-happy",
-    title: "commedy",
+    title: "Providers",
   },
   {
     icon: "ion-ios-star",
-    title: "super heroes",
+    title: "Talents",
   },
   {
     icon: "ion-ios-flash",
-    title: "actions",
+    title: "Entrepreneurs",
   },
   {
     icon: "ion-ios-videocam",
-    title: "hollywood",
+    title: "Fans",
   },
   {
     icon: "ion-ios-heart",
-    title: "Romantic",
+    title: "Talents",
   },
   {
     icon: "ion-ios-planet",
-    title: "sci-fi",
+    title: "Actors",
   },
   {
     icon: "ion-ios-happy",
