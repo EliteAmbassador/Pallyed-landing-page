@@ -12,9 +12,10 @@ import Featured from "../components/Featured";
 import Trending from "../components/Trending";
 import Categories from "../components/Categories";
 import AllCategories from "../components/AllCategories";
-import PricingPlan from "../components/PricingPlan";
+import SubscribeForm from "../components/SubscribeForm";
+//import PricingPlan from "../components/PricingPlan";
 import Faq from "../components/Faq";
-import NewsEvent from "../components/NewsEvent";
+//import NewsEvent from "../components/NewsEvent";
 import FooterWithDeco from "../components/Footer/FooterWithDeco";
 import PageNav from "../components/PageNav";
 import brand from "../public/text/brand";
@@ -89,6 +90,9 @@ function Landing(props) {
               <Promotions />
             </div>
           </section>
+          <section id="subscribe" className={classes.spaceTop}>
+            <SubscribeForm />
+          </section>
           <section id="featured" className={classes.spaceTop}>
             <Featured />
           </section>
@@ -98,14 +102,14 @@ function Landing(props) {
           <section id="categories" className={classes.spaceTop}>
             <Categories />
           </section>
-          <section id="all" className={classes.spaceTopShort}>
+          <section
+            id="autographed-collections"
+            className={classes.spaceTopShort}
+          >
             <AllCategories />
           </section>
           <section id="faq" className={classes.spaceTop}>
             <Faq />
-          </section>
-          <section id="news" className={classes.spaceTopShort}>
-            <NewsEvent />
           </section>
         </main>
         <section id="footer" className={classes.spaceTop}>

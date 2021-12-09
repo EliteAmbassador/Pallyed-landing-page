@@ -17,25 +17,19 @@ const sliderData = [
     image: imgAPI.movie[1],
     subtitle: "",
     title: "Pal up with your favourite stars",
-    rating: 0,
-    duration: "",
-    desc: "",
+    desc: "Palyed provides you a platform to connect with your favourite celebrities and influencers",
   },
   {
     image: imgAPI.movie[2],
     subtitle: "",
     title: "Request Personalised Video Messages",
-    rating: 0,
-    duration: "",
-    desc: "",
+    desc: "Request greetings/shoutouts videos for self or on bahalf of another person",
   },
   {
     image: imgAPI.movie[3],
     subtitle: "",
     title: "Access autographed collections of your facourite celebrities",
-    rating: 5,
-    duration: "",
-    desc: "",
+    desc: "Received signed collections/merchandise from your favourite celebrities",
   },
 ];
 
@@ -75,21 +69,6 @@ function Promotion(props) {
                         <span className={text.subtitle2}>{item.subtitle}</span>
                         {item.title}
                       </Typography>
-                      <p className={classes.property}>
-                        <span className={classes.star}>
-                          {[...Array(item.rating)].map((e, indexStar) => (
-                            <Icon
-                              className={classes.starIcon}
-                              key={indexStar.toString()}
-                            >
-                              star
-                            </Icon>
-                          ))}
-                        </span>
-                        5.0
-                        <span className={classes.divider} />
-                        {item.duration}
-                      </p>
                       <article className={classes.desc}>
                         <Typography component="h6" className={text.paragraph}>
                           {item.desc}
