@@ -23,15 +23,15 @@ function Featured(props) {
   const movieList = [
     {
       title: "Don Jazzy",
-      thumb: imgAPI.movie[2],
-    },
-    {
-      title: "Wole Soyinka",
       thumb: imgAPI.movie[3],
     },
     {
-      title: "Tony Elumelu",
+      title: "Wole Soyinka",
       thumb: imgAPI.movie[4],
+    },
+    {
+      title: "Tony Elumelu",
+      thumb: imgAPI.movie[5],
     },
   ];
   return (

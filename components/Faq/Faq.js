@@ -19,7 +19,7 @@ import useStyles from "./faq-style";
 
 const faqData = [
   {
-    q: "Abour Pallyed",
+    q: "About Pallyed",
     a: "Pallyed is a platform that provides personal contact and an engaging social interaction between fans and their favourite celebrities. ",
   },
   {

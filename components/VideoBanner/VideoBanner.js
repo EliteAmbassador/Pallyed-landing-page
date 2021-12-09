@@ -90,7 +90,7 @@ function Banner(props) {
         {yt.use && (
           <Hidden mdDown>
             <YouTube
-              videoId="CK1ndZEkBcE"
+              videoId="orI0ApNj7JQ"
               opts={opts}
               onReady={_onReady}
               onEnd={_onEnd}
@@ -121,7 +121,11 @@ function Banner(props) {
                 <Typography className={text.subtitle2}>
                   Introducing PALLYED
                 </Typography>
-                <Typography variant="h2" className={text.title}>
+                <Typography
+                  style={{ color: "#2793e6" }}
+                  variant="h2"
+                  className={text.title}
+                >
                   Pal up with your favourite stars
                 </Typography>
                 <Typography className={text.subtitle}>

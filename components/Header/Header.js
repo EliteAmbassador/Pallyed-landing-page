@@ -143,7 +143,11 @@ function Header(props) {
             <nav className={clsx(classes.navMenu, classes.navAuth)}>
               <Hidden xsDown>
                 <Button
-                  href={routeLink.movie.register}
+                  //href={routeLink.movie.register}
+                  //component={AnchorLink href="#subscribe"}
+                  AnchorLink
+                  href="#subscribe"
+                  //href={#subscribe}
                   variant="contained"
                   color="secondary"
                   className={classes.button}

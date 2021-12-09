@@ -14,19 +14,19 @@ import imgAPI from "~/public/images/imgAPI";
 
 const sliderData = [
   {
-    image: imgAPI.movie[1],
+    image: imgAPI.movie[0],
     subtitle: "",
-    title: "Pal up with your favourite stars",
+    title: "Connect with your favourite celebrities",
     desc: "Palyed provides you a platform to connect with your favourite celebrities and influencers",
   },
   {
-    image: imgAPI.movie[2],
+    image: imgAPI.movie[1],
     subtitle: "",
     title: "Request Personalised Video Messages",
     desc: "Request greetings/shoutouts videos for self or on bahalf of another person",
   },
   {
-    image: imgAPI.movie[3],
+    image: imgAPI.movie[2],
     subtitle: "",
     title: "Access autographed collections of your facourite celebrities",
     desc: "Received signed collections/merchandise from your favourite celebrities",
@@ -65,7 +65,7 @@ function Promotion(props) {
                 <Grid container className={classes.row}>
                   <Grid item sm={7} xs={12}>
                     <div className={classes.text}>
-                      <Typography variant="h4">
+                      <Typography variant="h4" style={{ color: "#f21680" }}>
                         <span className={text.subtitle2}>{item.subtitle}</span>
                         {item.title}
                       </Typography>
@@ -74,7 +74,7 @@ function Promotion(props) {
                           {item.desc}
                         </Typography>
                       </article>
-                      <section className={classes.btnArea}>
+                      {/*<section className={classes.btnArea}>
                         <Button className={classes.btnText} color="secondary">
                           {t("common:movie-landing.promo_btn1")}
                         </Button>
@@ -85,7 +85,7 @@ function Promotion(props) {
                         >
                           {t("common:movie-landing.promo_btn2")}
                         </Button>
-                      </section>
+                      </section>*/}
                     </div>
                   </Grid>
                   <Grid item sm={5} xs={12}>
