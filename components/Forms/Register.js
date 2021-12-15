@@ -33,7 +33,6 @@ function Register(props) {
     password: '',
     confirmPassword: '',
   });
-
   useEffect(() => {
     ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
       if (value !== values.password) {
@@ -55,6 +54,7 @@ function Register(props) {
   };
 
   const handleSubmit = () => {
+    console.log(values);
     userService.register(values).then(() => {
       console.log('Registration successful');
     }).catch(console.log('Error'));

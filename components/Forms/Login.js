@@ -13,6 +13,7 @@ import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { withTranslation } from '~/i18n';
 import routeLink from '~/public/text/link';
 import { useText } from '~/theme/common';
+import { userService } from '~/services';
 import SocialAuth from './SocialAuth';
 import Title from '../Title/TitleSecondary';
 import AuthFrame from './AuthFrame';
@@ -50,6 +51,10 @@ function Login(props) {
   };
 
   const handleSubmit = () => {
+    console.log(values);
+    userService.Login(values.email, values.password).then(() => {
+      console.log('Login successful');
+    }).catch(console.log('Error'));
     console.log('data submited');
   };
 
