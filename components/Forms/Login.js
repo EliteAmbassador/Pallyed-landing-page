@@ -52,7 +52,7 @@ function Login(props) {
 
   const handleSubmit = () => {
     console.log(values);
-    userService.Login(values.email, values.password).then(() => {
+    userService.login(values).then(() => {
       console.log('Login successful');
     }).catch(console.log('Error'));
     console.log('data submited');

@@ -8,8 +8,8 @@ const { publicRuntimeConfig } = getConfig();
 const baseUrl = `${publicRuntimeConfig.apiUrl}/patron`;
 const userSubject = new BehaviorSubject(process.browser && JSON.parse(localStorage.getItem('user')));
 
-function login(username, password) {
-    return fetchWrapper.post(`${baseUrl}/authenticate`, { username, password })
+function login(credentials) {
+    return fetchWrapper.post(`${baseUrl}/login`, { credentials })
         .then(user => {
             // publish user to subscribers and store in local storage to stay logged in between page refreshes
             userSubject.next(user);
@@ -27,7 +27,7 @@ function logout() {
 }
 
 function register(user) {
-    return fetchWrapper.post(`${baseUrl}/register`, user);
+    return fetchWrapper.post(`${baseUrl}/register`, { user });
 }
 
 function getAll() {
