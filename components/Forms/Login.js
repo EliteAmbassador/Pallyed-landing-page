@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Icon from '@material-ui/core/Icon';
@@ -20,6 +21,7 @@ import AuthFrame from './AuthFrame';
 import useStyles from './form-style';
 
 function Login(props) {
+  const router = useRouter();
   const classes = useStyles();
   const text = useText();
   const theme = useTheme();
@@ -54,6 +56,8 @@ function Login(props) {
     console.log(values);
     userService.login(values).then(() => {
       console.log('Login successful');
+      const returnUrl = router.query.returnUrl || '/dashboard';
+      router.push(returnUrl);
     }).catch(console.log('Error'));
     console.log('data submited');
   };
@@ -89,7 +93,7 @@ function Login(props) {
                 onChange={handleChange('email')}
                 name="email"
                 value={values.email}
-                validators={['required', 'isEmail']}
+                validators={['required', /* 'isEmail' */]}
                 errorMessages={['This field is required', 'Email is not valid']}
               />
             </Grid>
