@@ -123,6 +123,6 @@ MyApp.propTypes = {
   pageProps: PropTypes.object.isRequired
 };
 
-MyApp.getInitialProps = async (appContext) => ({ ...await App.getInitialProps(appContext) });
+MyApp.getInitialProps = async (appContext) => ({...await App.getInitialProps(appContext) })
 
 export default appWithTranslation(MyApp);
