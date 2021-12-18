@@ -9,7 +9,7 @@ const baseUrl = `${publicRuntimeConfig.apiUrl}/patron`;
 const userSubject = new BehaviorSubject(process.browser && JSON.parse(localStorage.getItem('user')));
 
 function login(credentials) {
-    return fetchWrapper.post(`${baseUrl}/login`, { credentials })
+    return fetchWrapper.post(`${baseUrl}/login`, credentials)
         .then(user => {
             // publish user to subscribers and store in local storage to stay logged in between page refreshes
             userSubject.next(user);
