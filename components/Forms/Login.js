@@ -56,8 +56,8 @@ function Login(props) {
     console.log(values);
     userService.login(values).then(() => {
       console.log('Login successful');
-      const returnUrl = router.query.returnUrl || '/dashboard';
-      router.push(returnUrl);
+      /* const returnUrl = router.query.returnUrl || '/dashboard'; */
+      router.push('/dashboard');
     }).catch(console.log('Error'));
     console.log('data submited');
   };
