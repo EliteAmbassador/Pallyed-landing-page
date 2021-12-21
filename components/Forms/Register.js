@@ -12,11 +12,13 @@ import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { withTranslation } from '~/i18n';
 import routeLink from '~/public/text/link';
 import { useText } from '~/theme/common';
+import { userService } from '~/services';
 import SocialAuth from './SocialAuth';
 import Checkbox from './Checkbox';
 import Title from '../Title/TitleSecondary';
 import AuthFrame from './AuthFrame';
 import useStyles from './form-style';
+
 
 function Register(props) {
   const classes = useStyles();
@@ -31,7 +33,6 @@ function Register(props) {
     password: '',
     confirmPassword: '',
   });
-
   useEffect(() => {
     ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
       if (value !== values.password) {
@@ -53,7 +54,10 @@ function Register(props) {
   };
 
   const handleSubmit = () => {
-    console.log('data submited');
+    console.log(values);
+    userService.register(values).then(() => {
+      console.log('Registration successful');
+    }).catch(console.log('Error'));
   };
 
   return (

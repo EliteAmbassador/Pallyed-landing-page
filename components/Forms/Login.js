@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Icon from '@material-ui/core/Icon';
@@ -13,12 +14,14 @@ import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import { withTranslation } from '~/i18n';
 import routeLink from '~/public/text/link';
 import { useText } from '~/theme/common';
+import { userService } from '~/services';
 import SocialAuth from './SocialAuth';
 import Title from '../Title/TitleSecondary';
 import AuthFrame from './AuthFrame';
 import useStyles from './form-style';
 
 function Login(props) {
+  const router = useRouter();
   const classes = useStyles();
   const text = useText();
   const theme = useTheme();
@@ -50,6 +53,12 @@ function Login(props) {
   };
 
   const handleSubmit = () => {
+    console.log(values);
+    userService.login(values).then(() => {
+      console.log('Login successful');
+      /* const returnUrl = router.query.returnUrl || '/dashboard'; */
+      router.push('/dashboard');
+    }).catch(console.log('Error'));
     console.log('data submited');
   };
 
@@ -84,7 +93,7 @@ function Login(props) {
                 onChange={handleChange('email')}
                 name="email"
                 value={values.email}
-                validators={['required', 'isEmail']}
+                validators={['required', /* 'isEmail' */]}
                 errorMessages={['This field is required', 'Email is not valid']}
               />
             </Grid>
