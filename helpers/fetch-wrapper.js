@@ -32,6 +32,7 @@ function handleResponse(response) {
 }
 
 function post(url, body) {
+    console.log('from' + body);
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', ...authHeader(url) },

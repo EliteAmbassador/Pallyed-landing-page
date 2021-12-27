@@ -28,7 +28,8 @@ function Register(props) {
 
   const { t } = props;
   const [values, setValues] = useState({
-    name: '',
+    fname: '',
+    lname: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -54,7 +55,7 @@ function Register(props) {
   };
 
   const handleSubmit = () => {
-    console.log(values);
+    console.log(typeof (values));
     userService.register(values).then(() => {
       console.log('Registration successful');
     }).catch(console.log('Error'));
@@ -84,9 +85,22 @@ function Register(props) {
                 variant="filled"
                 className={classes.input}
                 label={t('common:register_name')}
-                onChange={handleChange('name')}
-                name="name"
-                value={values.name}
+                onChange={handleChange('fname')}
+                name="fname"
+                value={values.fname}
+                validators={['required']}
+                errorMessages={['This field is required']}
+              />
+            </Grid>
+
+            <Grid item xs={12}>
+              <TextValidator
+                variant="filled"
+                className={classes.input}
+                label="surname"
+                onChange={handleChange('lname')}
+                name="lname"
+                value={values.lname}
                 validators={['required']}
                 errorMessages={['This field is required']}
               />

@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Hidden from '@material-ui/core/Hidden';
 import Head from 'next/head';
+import { userService } from '~/services';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from '../components/Header';
 import Footer from '../components/Footer/Footer';
@@ -69,6 +70,10 @@ function Dashboard(props) {
           <section className={clsx(classes.spaceTop, classes.spaceBottom)}>
             <Typography variant="h2" align="center" gutterBottom>
               {t('common:title')}
+              <h1>
+                { /* eslint-disable-next-line react/jsx-one-expression-per-line */ }
+                Hi {userService.userValue?.user.fname}
+              </h1>
             </Typography>
             <Typography variant="h4" align="center">
               {t('common:subtitle')}
@@ -85,7 +90,6 @@ function Dashboard(props) {
     </React.Fragment>
   );
 }
-
 Dashboard.propTypes = {
   onToggleDark: PropTypes.func.isRequired,
   onToggleDir: PropTypes.func.isRequired,
